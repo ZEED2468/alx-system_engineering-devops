@@ -1,14 +1,3 @@
-#!/bin/bash
-
-# Check if username argument is provided
-if [ -z "$1" ]; then
-  echo "Usage: $0 <username>"
-  exit 1
-fi
-
-# Store the username argument in a variable
-username="$1"
-
-# Run whoami command under the user passed as an argument
-su - "$username" -c "whoami"
-
+#!/usr/bin/env bash
+# Run software as another user
+sudo -u "$1" whoami
